@@ -1,0 +1,35 @@
+# GET JSON DATA USING AJAX IN HTML
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("https://jsonplaceholder.typicode.com/posts", function(data, status){
+            
+      $.each(data, function(i, item) {
+   			 $("#data").append("<li> Id :"+ data[i].id+" || Title:"+ data[i].title+"</li>");
+          
+            
+            
+			});
+      
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<h3> JSON Data From URL </h3>
+
+<button>Show Data</button>
+<ul id="data"></ul>
+
+</body>
+</html>
+
+```
